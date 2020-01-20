@@ -65,8 +65,33 @@ namespace SortedListsAndDictionaries
                 P(item.ToString());
             }
 
+            P("\nget value of key 'daria'\n");
+            P("Daria is " + myFirstSortedList["Daria"].ToString() + " years old.");
+
+            bool existsKey = myFirstSortedList.ContainsKey("Aline");
+            P($"key 'Aline' exists? {existsKey}");
+            myFirstSortedList.Remove("Aline");
+            existsKey = myFirstSortedList.ContainsKey("Aline");
+            P($"key 'Aline' exists aftre removal? {existsKey}");
+
+            P("\nCreate a sorted list string double\n");
+
+            SortedList<string, double> mySecondSortedList = new SortedList<string, double>()
+            {
+                {"Aline", 160},
+                {"Alex", 95.5},
+                {"Costa", 175.5},
+                {"Daria",112}
+            };
+
+            foreach (var item in mySecondSortedList)
+            {
+                P(item.ToString());
+            }
+
             Console.ReadLine();
         }
+
 
         static void P(string mssg)
         {
